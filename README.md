@@ -1,3 +1,3 @@
-# Email Aspect Manager
+# Treinando REACT
 
-Gerenciador de email Aspect para contornar bugs da plataforma e limitações como uso obrigatório de conta office 365
+Não Sabendo nada, mas mesmo assim fazendo muita coisa ahshashhahshash (/◕ヮ◕)/
