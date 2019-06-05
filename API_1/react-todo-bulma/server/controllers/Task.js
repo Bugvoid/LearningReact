@@ -36,14 +36,14 @@ module.exports = {
   },
 
   delete: function (req, res) {
-    Task.findByIdAndRemove(req.params.id, req.body, { new: true }, function (err, task) {
+    Task.findByIdAndRemove(req.params.id, function (err, task) {
       if (err) {
-        res.status(400).send("Error", err)
+        res.status(400).send("There's was an error while removing the task", err);
       }
       else {
-        res.status(200).send(req.params.id)
+        res.status(200).json(req.params.id);
       }
-    })
+    });
   },
 
   update: function(req,res){
