@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import * as serviceWorker from './serviceWorker';
 import Layout from './pages/Layout';
 
+import * as serviceWorker from './serviceWorker';
+
 render(
-    <Layout />,
-    document.getElementById('root')
+  <Layout />,
+  document.getElementById('root')
 );
 
 serviceWorker.unregister();

@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const TaskRoutes = require('./routes/Task')
 const mongoose = require('mongoose')
-const config = require('./config/keys.config.js')
+const config = require('./config/keys.config.js.js.js')
 const cors = require('cors')
 
 mongoose.connect(config.mongodbUri, { useNewUrlParser: true })
