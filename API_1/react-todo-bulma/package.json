@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm-run-all -p watch-css start-js server",
+    "start": "npm-run-all -p watch-css start-js",
     "start-js": "react-scripts start",
     "build-css": "node-sass-chokidar --include-path /src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "watch-css": "npm run build-css" 

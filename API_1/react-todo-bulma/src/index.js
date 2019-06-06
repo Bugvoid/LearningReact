@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import './style/theme.css';
 
 import Layout from './pages/Layout';
 
