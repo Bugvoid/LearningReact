@@ -3,7 +3,7 @@ import React from 'react';
 // Components
 import Tab from './menuTab/Tab';
 
-const MenuTab = ({tasks}) => {
+const MenuTab = ({ tasks }) => {
   const numberOfCompletedTasks = tasks.filter(task => task.completed).length;
 
   return (

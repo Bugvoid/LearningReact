@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './style/theme.css';
-
+import store from './store';
+import { addTask } from './actions/taskActions';
 import Layout from './pages/Layout';
 import { faSyncAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,6 +14,8 @@ import { faCircle } from '@fortawesome/free-regular-svg-icons';
 
 library.add(faCircle,faPlus);
 
+window.store = store;
+window.addTask = addTask;
 
 render(
   <Layout />,
