@@ -8,7 +8,10 @@ import MenuTab from './list/MenuTab'
 import { create } from 'domain';
 
 const mapStateToProps = state => {
-  return { tasks: state.tasks };
+  return { 
+    tasks: state.tasks ,
+    filterCompleted: state.filterCompleted,
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -20,8 +23,11 @@ const mapDispatchToProps = dispatch => {
 class List extends Component {
 
   render() {
-    const { tasks } = this.props;
+    let { tasks } = this.props;
     let taskListComponent = '';
+
+
+    tasks = tasks.filter(task => task.completed === filterCompleted)
 
     if(!getAllTasks.length){
       taskListComponent =

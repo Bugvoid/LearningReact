@@ -65,4 +65,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form));

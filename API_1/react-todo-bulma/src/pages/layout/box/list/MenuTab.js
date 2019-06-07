@@ -1,12 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { filterCompletedTasks } from '../../../../actions/taskActions';
 
 // Components
 import Tab from './menuTab/Tab';
 
 const mapStateToProps = state => {
-  return { tasks: state.tasks }
+  return { 
+    tasks: state.tasks,
+    filterCompleted:state.filterCompleted 
+  }
 };
+
+const mapDispatchToprops = dispatch => {
+  return{
+    applyFilter: (active) => dispatch(filterCompletedTasks(active))
+  }
+}
 
 const MenuTab = ({ tasks }) => {
   const numberOfCompletedTasks = tasks.filter(task => task.completed).length;
@@ -17,7 +27,8 @@ const MenuTab = ({ tasks }) => {
         <Tab
           text="Incomplete"
           quantity={(tasks.length - numberOfCompletedTasks)}
-          className={'is-active'}
+          className={filterCompleted ? '' : 'is-active'}
+          onClick={() => applyFilter(false)}
         />
 
         <Tab
@@ -30,4 +41,4 @@ const MenuTab = ({ tasks }) => {
   );
 };
 
-export default connect(mapStateToProps)(MenuTab);
+export default connect(mapStateToProps, mapDispatchToprops)(MenuTab);

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Tab = ({ text, quantity, className }) => {
+const Tab = ({ text, quantity, className, onClick }) => {
 
   return (
-    <li className={className} >
+    <li className={className} onClick={onClick} >
       <a>
         {text} &nbsp;
                 <span className="tag is-dark is-rounded is-small">
