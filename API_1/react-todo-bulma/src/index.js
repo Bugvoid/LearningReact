@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import './style/theme.css';
 import store from './store';
 import { addTask } from './actions/taskActions';
@@ -18,7 +19,9 @@ window.store = store;
 window.addTask = addTask;
 
 render(
-  <Layout />,
+  <Provider store={store}>
+    <Layout />
+  </Provider>,
   document.getElementById('root')
 );
 

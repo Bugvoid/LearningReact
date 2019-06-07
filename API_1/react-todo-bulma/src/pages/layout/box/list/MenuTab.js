@@ -1,7 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 // Components
 import Tab from './menuTab/Tab';
+
+const mapStateToProps = state => {
+  return { tasks: state.tasks }
+};
 
 const MenuTab = ({ tasks }) => {
   const numberOfCompletedTasks = tasks.filter(task => task.completed).length;
@@ -25,4 +30,4 @@ const MenuTab = ({ tasks }) => {
   );
 };
 
-export default MenuTab;
+export default connect(mapStateToProps)(MenuTab);

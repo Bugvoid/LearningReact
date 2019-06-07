@@ -1,35 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 
-//puxando Componente
+// Components
 import Task from './list/Task';
 import MenuTab from './list/MenuTab'
 
-class List extends Component {
-  constructor() {
-    super();
+const mapStateToProps = state => {
+  return { tasks: state.tasks };
+};
 
-    this.state = {
-      tasksDoServidor: [
-        { 'title': 'Primeira Tarefa', '_id': '1', 'completed': false },
-        { 'title': 'Segunda Tarefa', '_id': '2', 'completed': true }
-      ]
-    }
-  }
+class List extends Component {
 
   render() {
-    const { tasksDoServidor } = this.state;
+    const { tasks } = this.props;
 
     return (
       <div>
-        <MenuTab tasks={tasksDoServidor} />
+        <MenuTab />
         <div className="is-task-list">
-          <div>
-            <Task />
-          </div>
+          <Fragment>
+            {tasks.map(task => (
+              <Task task={task} key={task._id} />
+            ))}
+          </Fragment>
         </div>
       </div>
     )
   }
 }
 
-export default List;
+export default connect(mapStateToProps)(List);
