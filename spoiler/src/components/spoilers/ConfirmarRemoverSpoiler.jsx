@@ -58,7 +58,7 @@ class ConfirmarRemoverSpoiler extends Component {
             <blockquote className="blockquote text-center">
               <p className="mb-0">{this.state.spoiler.descricao}</p>
               <footer className="blockquote-footer">
-                {this.state.spoiler.espoliador}{" "}
+                {this.state.spoiler.espoliador}{""}
                 <cite title={this.state.spoiler.titulo}>
                   {this.state.spoiler.titulo}
                 </cite>

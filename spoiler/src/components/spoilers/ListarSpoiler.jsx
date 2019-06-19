@@ -13,7 +13,11 @@ class ListarSpoiler extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/api/spoilers`)
+    fetch(`http://localhost:3000/api/spoilers`, {
+      headers: {
+        rejectUnauthorized: false
+      }
+    })
       .then(spoilers =>
         spoilers.json().then(spoilers => this.setState({ spoilers }))
       )
@@ -49,14 +53,14 @@ class ListarSpoiler extends Component {
             </div>
             <div className="text-right">
               <Link
-                to={`/remover/${item.id}`}
+                to={`/remover/${item._id}`}
                 className="btn btn-danger mr-3"
                 role="button"
               >
                 Remover
               </Link>
               <Link
-                to={`/editar/${item.id}`}
+                to={`/editar/${item._id}`}
                 className="btn btn-primary"
                 role="button"
               >

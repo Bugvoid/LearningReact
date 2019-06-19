@@ -10,9 +10,7 @@ class EditarSpoiler extends Component {
         espoliador: "",
         descricao: "",
         titulo: ""
-      },
-      erro: null,
-      redirect: false
+      }
     };
   }
 
@@ -63,7 +61,7 @@ class EditarSpoiler extends Component {
                 className="form-control-plaintext"
                 id="espoliador"
                 name="espoliador"
-                placeholder="zededeus"
+                placeholder="Digite aqui"
                 minLength="2"
                 maxLength="40"
                 value={this.state.spoiler.espoliador}
@@ -79,7 +77,7 @@ class EditarSpoiler extends Component {
                 id="titulo"
                 name="titulo"
                 aria-describedby="tituloAjuda"
-                placeholder="Hereditário"
+                placeholder="Digite aqui"
                 minLength="2"
                 maxLength="255"
                 value={this.state.spoiler.titulo}
@@ -95,7 +93,7 @@ class EditarSpoiler extends Component {
                 className="form-control"
                 id="descricao"
                 name="descricao"
-                placeholder="Charlie é Paimon"
+                placeholder="Digite aqui"
                 minLength="2"
                 maxLength="255"
                 value={this.state.spoiler.descricao}
@@ -103,7 +101,7 @@ class EditarSpoiler extends Component {
               />
             </div>
             <button type="submit" className="btn btn-primary">
-              Enviar
+              Alterar
             </button>
           </fieldset>
         </form>
@@ -125,7 +123,7 @@ class EditarSpoiler extends Component {
     const { id } = this.state.spoiler;
 
     fetch(`http://localhost:3000/api/spoilers/${id}`, {
-      method: "put",
+      method: "PUT",
       body: JSON.stringify(this.state.spoiler),
       headers: {
         "Content-Type": "application/json"
