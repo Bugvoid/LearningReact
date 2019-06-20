@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import robot from "../../img/robot.png";
+import fon from "../../img/fon.jpg";
 import { Link } from "react-router-dom";
 
 class ListarSpoiler extends Component {
@@ -41,34 +41,33 @@ class ListarSpoiler extends Component {
 
     if (spoilers && spoilers.length) {
       return spoilers.map((item, indice) => (
-        <div key={indice} className="card mb-4">
-          <h5 className="card-header">{item.espoliador}</h5>
+        <div key={indice} className="card">
+          <img className="card-img-top" src={fon} alt="SPOILER!!" />
           <div className="card-body">
-            <div className="media">
-              <img className="img-fluid" src={robot} alt="Spoiler" />
-              <div className="media-body">
-                <h5 className="mt-0 mb-1">{item.titulo}</h5>
-                <p>{item.descricao}</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <Link
-                to={`/remover/${item._id}`}
-                className="btn btn-danger mr-3"
-                role="button"
-              >
-                Remover
-              </Link>
-              <Link
-                to={`/editar/${item._id}`}
-                className="btn btn-primary"
-                role="button"
-              >
-                Editar
-              </Link>
-            </div>
+            <h5 className="card-title">{item.titulo}</h5>
+            <p className="card-text">{item.descricao}</p>
+          </div>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">{item.espoliador}</li>
+          </ul>
+          <div className="card-body">
+            <Link
+              to={`/remover/${item._id}`}
+              className="btn btn-danger mr-3"
+              role="button"
+            >
+              Remover
+            </Link>
+            <Link
+              to={`/editar/${item._id}`}
+              className="btn btn-primary"
+              role="button"
+            >
+              Editar
+            </Link>
           </div>
         </div>
+        
       ));
     } else {
       return (

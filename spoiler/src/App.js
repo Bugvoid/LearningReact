@@ -4,7 +4,24 @@ import CriarSpoiler from "./components/spoilers/CriarSpoiler.jsx";
 import EditarSpoiler from "./components/spoilers/EditarSpoiler.jsx";
 import ConfirmarRemoverSpoiler from "./components/spoilers/ConfirmarRemoverSpoiler.jsx";
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import Darkmode from "darkmode-js";
 import "./App.css";
+
+var options = {
+  bottom: "64px",
+  right: "unset",
+  left: "32px",
+  time: "0.5s",
+  mixColor: "#fff",
+  backgroundColor: "#fff",
+  buttonColorDark: "#100f2c",
+  buttonColorLight: "#fff",
+  saveInCookies: false,
+  label: "🌓"
+};
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
 
 class App extends Component {
   render() {

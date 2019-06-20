@@ -58,7 +58,7 @@ class EditarSpoiler extends Component {
               <label htmlFor="espoliador">Espoliador</label>
               <input
                 type="text"
-                className="form-control-plaintext"
+                className="form-control"
                 id="espoliador"
                 name="espoliador"
                 placeholder="Digite aqui"
@@ -66,7 +66,6 @@ class EditarSpoiler extends Component {
                 maxLength="40"
                 value={this.state.spoiler.espoliador}
                 onChange={this.handleInputChange}
-                disabled
               />
             </div>
             <div className="form-group">
@@ -120,9 +119,9 @@ class EditarSpoiler extends Component {
   };
 
   handleSubmit = event => {
-    const { id } = this.state.spoiler;
+    const { _id } = this.state.spoiler;
 
-    fetch(`http://localhost:3000/api/spoilers/${id}`, {
+    fetch(`http://localhost:3000/api/spoilers/${_id}`, {
       method: "PUT",
       body: JSON.stringify(this.state.spoiler),
       headers: {
